@@ -23,6 +23,7 @@
 		C9144A0918AC7E97005A1550 /* Applying_MVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9144A0818AC7E97005A1550 /* Applying_MVCTests.m */; };
 		C9144A1418AC7EBA005A1550 /* Posts.m in Sources */ = {isa = PBXBuildFile; fileRef = C9144A1318AC7EBA005A1550 /* Posts.m */; };
 		C9144A1718AC7ED5005A1550 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9144A1618AC7ED5005A1550 /* PostViewController.m */; };
+		C9441F1D18ACA42C00A1ED63 /* PostEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9441F1C18ACA42C00A1ED63 /* PostEntryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		C9144A1318AC7EBA005A1550 /* Posts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Posts.m; path = ../Posts.m; sourceTree = "<group>"; };
 		C9144A1518AC7ED5005A1550 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostViewController.h; path = ../PostViewController.h; sourceTree = "<group>"; };
 		C9144A1618AC7ED5005A1550 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostViewController.m; path = ../PostViewController.m; sourceTree = "<group>"; };
+		C9441F1B18ACA42C00A1ED63 /* PostEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostEntryViewController.h; sourceTree = "<group>"; };
+		C9441F1C18ACA42C00A1ED63 /* PostEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostEntryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				C91449EC18AC7E97005A1550 /* MVAppDelegate.h */,
 				C91449ED18AC7E97005A1550 /* MVAppDelegate.m */,
 				C91449EF18AC7E97005A1550 /* Main.storyboard */,
+				C9441F1B18ACA42C00A1ED63 /* PostEntryViewController.h */,
+				C9441F1C18ACA42C00A1ED63 /* PostEntryViewController.m */,
 				C91449F218AC7E97005A1550 /* MVViewController.h */,
 				C91449F318AC7E97005A1550 /* MVViewController.m */,
 				C91449F518AC7E97005A1550 /* Images.xcassets */,
@@ -261,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C91449EA18AC7E97005A1550 /* main.m in Sources */,
+				C9441F1D18ACA42C00A1ED63 /* PostEntryViewController.m in Sources */,
 				C91449F418AC7E97005A1550 /* MVViewController.m in Sources */,
 				C91449EE18AC7E97005A1550 /* MVAppDelegate.m in Sources */,
 				C9144A1418AC7EBA005A1550 /* Posts.m in Sources */,
@@ -473,6 +479,7 @@
 				C9144A0E18AC7E97005A1550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9144A0F18AC7E97005A1550 /* Build configuration list for PBXNativeTarget "Applying_MVCTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +488,7 @@
 				C9144A1118AC7E97005A1550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

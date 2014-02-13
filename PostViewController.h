@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Posts.h"
 
 @interface PostViewController : UITableViewController
+
+@property (nonatomic, strong) Posts *enteredPost;
 
 @end

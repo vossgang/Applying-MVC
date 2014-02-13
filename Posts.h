@@ -16,4 +16,6 @@
 @property (nonatomic, strong) NSDate   *timeStamp;
 
 
+-(Posts *)createPost:(int )newpost;
+
 @end

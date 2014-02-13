@@ -8,6 +8,7 @@
 
 #import "PostViewController.h"
 #import "Posts.h"
+#import "MVViewController.h"
 
 
 @interface PostViewController ()
@@ -17,6 +18,8 @@
 @end
 
 @implementation PostViewController
+
+@synthesize enteredPost;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,34 +34,20 @@
 {
     [super viewDidLoad];
     
-    
-    
-    
-    
+
     NSMutableArray *newPosts = [[NSMutableArray alloc] init];
     
     
     for(int i = 0; i < 22; i++){
         Posts *nextPost = [[Posts alloc]init];
         
-        
-        nextPost.userName = [NSString stringWithFormat:@"User number %d", i + 1];
-        nextPost.title    = [NSString stringWithFormat:@"The Title %d is missing", i + 1];
-        nextPost.timeStamp = [NSDate date];
-        nextPost.content   = [NSString stringWithFormat:@"Content to go here in %d days", i + 1];
-        
+        nextPost = [nextPost createPost:(i+1)];
         [newPosts insertObject:nextPost atIndex:i];
     };
-    
-    
-    
-    
+
     self.posts = newPosts;
     
-    
-    
-    
-    
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -140,16 +129,23 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    long therow = [indexPath row];
+    MVViewController *destViewController = segue.destinationViewController;
+    destViewController.thispost = [self.posts objectAtIndex:therow];
+    
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
 
- */
 
 @end

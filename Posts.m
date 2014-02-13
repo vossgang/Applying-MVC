@@ -10,4 +10,18 @@
 
 @implementation Posts
 
+
+-(Posts *)createPost:(int )newpost
+{
+
+    Posts *newPost = [[Posts alloc]init];
+    
+        newPost.userName = [NSString stringWithFormat:@"User number %d", newpost];
+        newPost.title    = [NSString stringWithFormat:@"The Title %d is missing", newpost];
+        newPost.timeStamp = [NSDate date];
+        newPost.content   = [NSString stringWithFormat:@"Content to go here in %d days", newpost];    
+    
+    return newPost;
+}
+
 @end
