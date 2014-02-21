@@ -37,7 +37,6 @@
     [self loadFromFile];
     
     if (self.posts.count == 0) {
-        NSLog(@"%ld posts", self.posts.count);
 //        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"saveInfo" ofType:@"txt"];
 //        [[NSFileManager defaultManager] copyItemAtPath:bundlePath toPath:filePath error:nil];
         NSMutableArray *newPosts = [NSMutableArray new];
