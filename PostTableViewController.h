@@ -1,5 +1,5 @@
 //
-//  MVViewController.h
+//  PostViewController.h
 //  Applying_MVC
 //
 //  Created by Matthew Voss on 2/12/14.
@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Posts.h"
+#import "Post.h"
 
-@interface MVViewController : UIViewController
+@interface PostTableViewController : UITableViewController
 
-@property (nonatomic, strong) Posts *thispost;
-
+@property (nonatomic, weak) Post *enteredPost;
 
 @end

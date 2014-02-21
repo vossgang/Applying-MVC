@@ -1,25 +1,21 @@
 //
-//  PostEntryViewController.m
+//  EditPostViewController.m
 //  Applying_MVC
 //
-//  Created by Matthew Voss on 2/12/14.
+//  Created by Matthew Voss on 2/14/14.
 //  Copyright (c) 2014 Matthew Voss. All rights reserved.
 //
 
-#import "PostEntryViewController.h"
+#import "PostEditViewController.h"
 #import "Post.h"
-#import "PostTableViewController.h"
 
-@interface PostEntryViewController ()
-
-
-@property (weak, nonatomic) IBOutlet UITextField *UserName;
+@interface PostEditViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *PostTitle;
-@property (weak, nonatomic) IBOutlet UITextField *PostContent;
+@property (weak, nonatomic) IBOutlet UITextView *PostContent;
 
 @end
 
-@implementation PostEntryViewController
+@implementation PostEditViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,8 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.PostTitle.text = self.post.title;
+    self.PostContent.text = self.post.content;
     self.view.backgroundColor = self.post.color;
-    self.PostContent.backgroundColor = self.post.color;
     
 	// Do any additional setup after loading the view.
 }
@@ -45,24 +42,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 -(void)setPost:(Post *)post
 {
     _post = post;
     
-    
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    
+
+-(void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:animated];
     
-    _post.content = self.PostContent.text;
-    _post.title = self.PostTitle.text;
-    _post.userName = self.UserName.text;
-    _post.timeStamp = [NSDate date];
-    
+    if ((![self.post.content isEqualToString: self.PostContent.text]) || (![self.post.title isEqualToString:self.PostTitle.text])) {
+        _post.content = self.PostContent.text;
+        _post.title = self.PostTitle.text;
+        _post.timeStamp = [NSDate date];
+        [_post ChangeEditFlag:(_post)];
+    }
 }
-
 
 @end
