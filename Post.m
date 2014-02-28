@@ -16,10 +16,12 @@
 {
 
     Post *newPost = [[Post alloc]init];
-    newPost.userName = [NSString stringWithFormat:@"User number %d", postNumber];
-    newPost.title    = [NSString stringWithFormat:@"The Title %d is missing", postNumber];
-    newPost.timeStamp = [NSDate date];
-    newPost.content   = [NSString stringWithFormat:@"Content to go here in %d days", postNumber];
+    newPost.userName        = [NSString stringWithFormat:@"User number %d", postNumber];
+    newPost.title           = [NSString stringWithFormat:@"The Title %d is missing", postNumber];
+    newPost.timeStamp       = [NSDate date];
+    newPost.content         = [NSString stringWithFormat:@"Content to go here in %d days", postNumber];
+    newPost.postImage       = [UIImage new];
+    newPost.imageFilePath   = [NSString new];
     [self ChangePostColor: newPost];
     
     return newPost;
@@ -55,35 +57,11 @@
 -(void)ChangePostColor:(Post *)postToChange
 
 {
-    NSInteger randomNuber = (arc4random() % 7);
+    CGFloat r = arc4random_uniform(100) / (float)100;
+    CGFloat g = arc4random_uniform(100) / (float)100;
+    CGFloat b = arc4random_uniform(100) / (float)100;
     
-    switch (randomNuber) {
-        case 0:
-            postToChange.color = [UIColor orangeColor];
-            break;
-        case 1:
-            postToChange.color = [UIColor yellowColor];
-            break;
-        case 2:
-            postToChange.color = [UIColor whiteColor];
-            break;
-        case 3:
-            postToChange.color = [UIColor grayColor];
-            break;
-        case 4:
-            postToChange.color = [UIColor redColor];
-            break;
-        case 5:
-            postToChange.color = [UIColor purpleColor];
-            break;
-        case 6:
-            postToChange.color = [UIColor greenColor];
-            break;
-        default:
-            postToChange.color = [UIColor magentaColor];
-            break;
-    }
-    
+    postToChange.color = [UIColor colorWithRed:r green:g blue:b alpha:1];
 }
 
 
@@ -136,12 +114,12 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
-    [encoder encodeObject:self.userName   forKey:@"userName"];
-    [encoder encodeObject:self.title      forKey:@"title"];
-    [encoder encodeObject:self.content    forKey:@"content"];
-    [encoder encodeObject:self.timeStamp  forKey:@"timeStamp"];
-    [encoder encodeObject:self.color      forKey:@"color"];
-    
+    [encoder encodeObject:self.userName      forKey:@"userName"];
+    [encoder encodeObject:self.title         forKey:@"title"];
+    [encoder encodeObject:self.content       forKey:@"content"];
+    [encoder encodeObject:self.timeStamp     forKey:@"timeStamp"];
+    [encoder encodeObject:self.color         forKey:@"color"];
+    [encoder encodeObject:self.imageFilePath forKey:@"imageFilePath"];
     
     
 }
@@ -149,11 +127,12 @@
 {
    
     if (self = [super init]) {
-        self.userName   = [decoder decodeObjectForKey:@"userName"];
-        self.title      = [decoder decodeObjectForKey:@"title"];
-        self.content    = [decoder decodeObjectForKey:@"content"];
-        self.timeStamp  = [decoder decodeObjectForKey:@"timeStamp"];
-        self.color      = [decoder decodeObjectForKey:@"color"];
+        self.userName      = [decoder decodeObjectForKey:@"userName"];
+        self.title         = [decoder decodeObjectForKey:@"title"];
+        self.content       = [decoder decodeObjectForKey:@"content"];
+        self.timeStamp     = [decoder decodeObjectForKey:@"timeStamp"];
+        self.color         = [decoder decodeObjectForKey:@"color"];
+        self.imageFilePath = [decoder decodeObjectForKey:@"imageFilePath"];
     }
     return self;
 }

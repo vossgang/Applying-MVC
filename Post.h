@@ -10,13 +10,15 @@
 
 @interface Post : NSObject <NSCoding>
 
-@property (nonatomic, strong) NSString  *userName;
-@property (nonatomic, strong) NSString  *title;
-@property (nonatomic, strong) NSString  *content;
-@property (nonatomic, strong) NSDate    *timeStamp;
-@property (nonatomic, strong) UIColor   *color;
-@property (nonatomic, strong) NSString  *editFlag;
-@property (nonatomic, strong) NSString  *deleteFlag;
+@property (nonatomic, strong) NSString    *userName;
+@property (nonatomic, strong) NSString    *title;
+@property (nonatomic, strong) NSString    *content;
+@property (nonatomic, strong) NSDate      *timeStamp;
+@property (nonatomic, strong) UIColor     *color;
+@property (nonatomic, strong) NSString    *editFlag;
+@property (nonatomic, strong) NSString    *deleteFlag;
+@property (nonatomic, strong) UIImage     *postImage;
+@property (nonatomic, strong) NSString    *imageFilePath;
 
 
 -(Post *)createPost:(int )postNumber;

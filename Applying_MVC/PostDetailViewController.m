@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *PostContent;
 @property (weak, nonatomic) IBOutlet UILabel *postUserName;
 @property (weak, nonatomic) IBOutlet UILabel *PostDate;
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 
 @end
 
@@ -62,6 +63,7 @@
     
     self.view.backgroundColor = self.post.color;
     self.PostContent.backgroundColor = self.post.color;
+    self.imageview.image = self.post.postImage;
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -87,6 +89,7 @@
     self.PostContent.text = _post.content;
     self.navigationItem.title = _post.title;
     self.PostDate.text = [_post.timeStamp description];
+    self.imageview.image = _post.postImage;
     
 };
 

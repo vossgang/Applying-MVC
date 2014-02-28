@@ -72,13 +72,17 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOr-FY-o5t">
-                                <rect key="frame" x="33" y="112" width="240" height="321"/>
+                                <rect key="frame" x="20" y="112" width="280" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="huX-Ld-e8j">
+                                <rect key="frame" x="28" y="308" width="240" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -95,6 +99,7 @@
                         <outlet property="PostContent" destination="cOr-FY-o5t" id="wDI-yL-T9P"/>
                         <outlet property="PostDate" destination="1W1-bd-qhf" id="YJd-Qy-SL9"/>
                         <outlet property="PostUserName" destination="yiA-jW-yYv" id="5zi-EG-nIp"/>
+                        <outlet property="imageview" destination="huX-Ld-e8j" id="qEj-zj-f7U"/>
                         <outlet property="postUserName" destination="yiA-jW-yYv" id="krW-7k-RRK"/>
                     </connections>
                 </viewController>
@@ -128,6 +133,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2f1-Fh-7Ua">
+                                <rect key="frame" x="20" y="348" width="280" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bE-Z6-1a2">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="9mG-II-40W">
+                                        <connections>
+                                            <action selector="takePicture:" destination="eGP-NO-hSl" id="127-8U-j2T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -135,6 +155,7 @@
                     <connections>
                         <outlet property="PostContent" destination="gGZ-Jz-Po2" id="LBz-QV-w6K"/>
                         <outlet property="PostTitle" destination="FHj-vY-6mL" id="LEg-JS-hMa"/>
+                        <outlet property="imageview" destination="2f1-Fh-7Ua" id="Zrw-4J-0w6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lkj-Df-fPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,6 +192,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AcR-oT-7uC">
+                                <rect key="frame" x="20" y="336" width="280" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNv-ea-N4N">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" systemItem="camera" id="qr3-BR-w1k">
+                                        <connections>
+                                            <action selector="takePicture:" destination="vvL-cc-cAk" id="JTy-gS-rgj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -179,6 +215,7 @@
                         <outlet property="PostContent" destination="F29-KK-OK4" id="LJR-bc-dGM"/>
                         <outlet property="PostTitle" destination="DcA-gY-IOF" id="YgH-em-FWc"/>
                         <outlet property="UserName" destination="Hcn-zu-HYp" id="smp-fv-oYA"/>
+                        <outlet property="imageview" destination="AcR-oT-7uC" id="ro5-8I-7xi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1A9-Im-7y6" userLabel="First Responder" sceneMemberID="firstResponder"/>

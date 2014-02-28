@@ -63,7 +63,7 @@
     
     NSMutableArray *newPosts = [NSMutableArray new];
     
-    for(int i = 0; i < 7; i++){
+    for(int i = 0; i < 1; i++){
         Post *nextPost = [[Post alloc]init];
         
         nextPost = [nextPost createPost:(i+1)];
